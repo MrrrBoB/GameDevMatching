@@ -11,7 +11,6 @@ public class FloatData : ScriptableObject
    {
       num = val;
    }
-
    public float GetNum()
    {
       return num;
