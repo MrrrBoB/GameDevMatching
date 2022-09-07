@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 [CreateAssetMenu]
 public class IntData : ScriptableObject
 {
-  private int num;
+  public int num;
 
   public void SetNum(int val)
   {
     num = val;
   }
 
-  public int GetNum()
+  public void UpdateValue(int val)
+  {
+    num += val;
+  }
+
+public int GetNum()
   {
     return num;
   }
