@@ -5,7 +5,7 @@ using UnityEngine;
 public class MaterialBehavior : MonoBehaviour
 {
     private MeshRenderer matRenderer;
-    void Start()
+    void Awake()
     {
         matRenderer = GetComponent<MeshRenderer>();
     }
