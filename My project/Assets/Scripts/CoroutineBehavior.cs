@@ -11,17 +11,19 @@ public class CoroutineBehavior : MonoBehaviour
     private WaitForSeconds wfs;
     private WaitForFixedUpdate wffu;
     public UnityEvent startEvent, repeatCountEvent, startCountEvent, endCountEvent, repeatUntilFalseEvent;
+    
 
     private void Start()
     {
+        wfs = new WaitForSeconds(seconds);
+        wffu = new WaitForFixedUpdate();
         startEvent.Invoke();
     }
 
     private IEnumerator Counting()
     {
         
-        wfs = new WaitForSeconds(seconds);
-        wffu = new WaitForFixedUpdate();
+       
         startCountEvent.Invoke();
         yield return wfs;
         while (counterNum.num > 0)
