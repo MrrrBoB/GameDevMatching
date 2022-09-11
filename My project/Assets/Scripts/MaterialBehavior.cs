@@ -16,5 +16,8 @@ public class MaterialBehavior : MonoBehaviour
         Debug.Log("Changed Color");
     }
 
-   
+    public void ChangeMaterialColor(ColorIDListData obj)
+    {
+        matRenderer.material = obj.currentColor.mat;
+    }
 }

@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 1575648929486446133}
   - component: {fileID: 8299710676217652735}
   - component: {fileID: -7904388267186198570}
-  - component: {fileID: 8370760344205114175}
-  m_Layer: 7
-  m_Name: Ring
+  - component: {fileID: 7425717963386142520}
+  m_Layer: 6
+  m_Name: Balll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7848893135118296166}
-  m_Mesh: {fileID: 1865056248366311061, guid: 26dc59fd98907944b9cec31223a59427, type: 3}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!64 &6208182987022532413
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
   destroyEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8370760344205114175
+--- !u!114 &7425717963386142520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,11 +189,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 7848893135118296166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d8e7e21a7a1cdb448d75ae7536f0518, type: 3}
+  m_Script: {fileID: 11500000, guid: 184cd5abef6243640b5fd1ea02dc1cf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   idObj: {fileID: 0}
   startEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8299710676217652735}
+        m_TargetAssemblyTypeName: MaterialBehavior, Assembly-CSharp
+        m_MethodName: ChangeMaterialColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: ColorIDListData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  matchEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  mismatchEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  noMatchDelayedEvent:
     m_PersistentCalls:
       m_Calls: []
   colorDataListObj: {fileID: 11400000, guid: bcd780e94665a4146a00a25d8987f835, type: 2}
