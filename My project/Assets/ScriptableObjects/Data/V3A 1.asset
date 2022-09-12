@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec980ba04fb822c49a24c2a04f8da485, type: 3}
-  m_Name: PrefabInstancer
+  m_Script: {fileID: 11500000, guid: 6748cfd274bf5064bab5743deafe1116, type: 3}
+  m_Name: V3A 1
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7848893135118296166, guid: 94531f8281eea9d418334860a9d61117, type: 3}
+  value: {x: 3, y: -3, z: 0}

@@ -10,9 +10,9 @@ public class ColorMatchBehavior : MatchBehaviour
         idObj = colorDataListObj.currentColor;
     }
 
-    public void ChangeMaterial(MeshRenderer renderer)
+    public void ChangeMaterial(MeshRenderer Mrend)
     {
         var newColor = idObj as ColorID;
-        renderer.material = newColor.mat;
+        if (newColor != null) Mrend.material = newColor.mat;
     }
 }
