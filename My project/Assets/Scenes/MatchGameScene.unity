@@ -224,7 +224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d5324ebf555404dad9ac3a469da3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canRun: 0
   counterNum: {fileID: 0}
   seconds: 2
   startEvent:
@@ -242,6 +241,18 @@ MonoBehaviour:
   repeatUntilFalseEvent:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 11400000, guid: bcd780e94665a4146a00a25d8987f835, type: 2}
+        m_TargetAssemblyTypeName: ColorIDListData, Assembly-CSharp
+        m_MethodName: SetCurrentColorRandom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 4816b76677379b24fa36a0e905bb7f19, type: 2}
         m_TargetAssemblyTypeName: Instancer, Assembly-CSharp
         m_MethodName: CreateInstanceListRandomly
@@ -266,10 +277,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: bcd780e94665a4146a00a25d8987f835, type: 2}
-        m_TargetAssemblyTypeName: ColorIDListData, Assembly-CSharp
-        m_MethodName: SetCurrentColorRandom
-        m_Mode: 1
+--- !u!114 &301482075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301482073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161237e9683aab44fa1695043a0db173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObj: {fileID: 11400000, guid: c63bcea3a0bd94a438af98f43f3ac75d, type: 2}
+  raiseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 301482074}
+        m_TargetAssemblyTypeName: CoroutineBehavior, Assembly-CSharp
+        m_MethodName: set_CanRun
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -490,9 +517,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1453031739}
-        m_TargetAssemblyTypeName: CoroutineBehavior, Assembly-CSharp
-        m_MethodName: StartCounting
+      - m_Target: {fileID: 11400000, guid: 8b480a03bd62e7d43bdcd185671e70f5, type: 2}
+        m_TargetAssemblyTypeName: GameAction, Assembly-CSharp
+        m_MethodName: RaiseAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -552,6 +579,7 @@ GameObject:
   - component: {fileID: 622322989}
   - component: {fileID: 622322988}
   - component: {fileID: 622322987}
+  - component: {fileID: 622322990}
   m_Layer: 5
   m_Name: ScoreNum
   m_TagString: Untagged
@@ -653,6 +681,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622322985}
   m_CullTransparentMesh: 1
+--- !u!114 &622322990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622322985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161237e9683aab44fa1695043a0db173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObj: {fileID: 11400000, guid: 295d602fa2c92ca4796da662db061fea, type: 2}
+  raiseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 622322987}
+        m_TargetAssemblyTypeName: TextLabelBehavior, Assembly-CSharp
+        m_MethodName: UpdateText
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 4e5295f2a81a4e24595d50ac52151889, type: 2}
+          m_ObjectArgumentAssemblyTypeName: IntData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &894636149
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,6 +801,7 @@ GameObject:
   - component: {fileID: 915305616}
   - component: {fileID: 915305615}
   - component: {fileID: 915305614}
+  - component: {fileID: 915305617}
   m_Layer: 5
   m_Name: HighScoreNum
   m_TagString: Untagged
@@ -858,6 +915,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915305612}
   m_CullTransparentMesh: 1
+--- !u!114 &915305617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915305612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161237e9683aab44fa1695043a0db173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObj: {fileID: 11400000, guid: 295d602fa2c92ca4796da662db061fea, type: 2}
+  raiseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 915305614}
+        m_TargetAssemblyTypeName: TextLabelBehavior, Assembly-CSharp
+        m_MethodName: UpdateText
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 35aef06324565254ab324ee3fc6b9340, type: 2}
+          m_ObjectArgumentAssemblyTypeName: IntData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &931824714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1453031740}
   - component: {fileID: 1453031739}
+  - component: {fileID: 1453031741}
   m_Layer: 0
   m_Name: CoroutineObject
   m_TagString: Untagged
@@ -1236,7 +1322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d5324ebf555404dad9ac3a469da3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canRun: 0
   counterNum: {fileID: 11400000, guid: c5eb9231e8cd1be4fbcf1935a54d1f6e, type: 2}
   seconds: 1
   startEvent:
@@ -1341,6 +1426,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1453031741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453031738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161237e9683aab44fa1695043a0db173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObj: {fileID: 11400000, guid: 8b480a03bd62e7d43bdcd185671e70f5, type: 2}
+  raiseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1453031739}
+        m_TargetAssemblyTypeName: CoroutineBehavior, Assembly-CSharp
+        m_MethodName: StartCounting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1495493534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,9 +1927,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TransformBehavior, Assembly-CSharp
-        m_MethodName: ResetToZero
+      - m_Target: {fileID: 11400000, guid: 8b480a03bd62e7d43bdcd185671e70f5, type: 2}
+        m_TargetAssemblyTypeName: GameAction, Assembly-CSharp
+        m_MethodName: RaiseAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1825,18 +1938,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2018480986
 MonoBehaviour:
@@ -1889,6 +1990,7 @@ GameObject:
   - component: {fileID: 2076216088}
   - component: {fileID: 2076216087}
   - component: {fileID: 2076216086}
+  - component: {fileID: 2076216091}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2005,3 +2107,31 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2076216091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076216085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161237e9683aab44fa1695043a0db173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObj: {fileID: 11400000, guid: c63bcea3a0bd94a438af98f43f3ac75d, type: 2}
+  raiseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2076216086}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: End
+          m_BoolArgument: 0
+        m_CallState: 2
