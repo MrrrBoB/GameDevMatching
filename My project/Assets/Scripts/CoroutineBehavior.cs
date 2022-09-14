@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class CoroutineBehavior : MonoBehaviour
 {
-    public bool canRun;
+    public bool CanRun { get; set; }
     public IntData counterNum;
     public float seconds = 3.0f;
     private WaitForSeconds wfs;
@@ -42,7 +42,7 @@ public class CoroutineBehavior : MonoBehaviour
 
     private IEnumerator RepeatUntilFalse()
     {
-        while (canRun)
+        while (CanRun)
         {
             yield return wfs;
             repeatUntilFalseEvent.Invoke();
@@ -51,7 +51,7 @@ public class CoroutineBehavior : MonoBehaviour
 
     public void StartRepeatUntilFalse()
     {
-        canRun = true;
+        CanRun = true;
         StartCoroutine(RepeatUntilFalse());
     }
 
